@@ -45,7 +45,7 @@ class NUploadFile extends CActiveRecordBehavior {
 	}
 	
 	public function removeFile($fileName) {
-		$path = $this->getFilePath();
+		$path = $this->uploadDirectory.$fileName;
 		if(is_file($path) && $this->removeFile)
 			unlink($path);
 	}
